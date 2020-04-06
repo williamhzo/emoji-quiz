@@ -19,8 +19,8 @@
   <body>
     <header>
       <div class="nav is-flex">
-        <a href="#">Home</a>
-        <a href="#">About</a>
+        <button id="btn-home" class="btn">Home</button>
+        <button id="btn-about" class="btn">About</button>
       </div>
     </header>
     <!-- Main section - home page -->
@@ -30,20 +30,11 @@
         <div class="left is-flex"></div>
         <div class="right is-flex">
           <ul class="rules-list">
-            <li>
-              <i class="fas fa-angle-right"></i> Guess what movie is hidden
-              behind the emojis
-            </li>
-            <li>
-              <i class="fas fa-angle-right"></i> You have 30 seconds to figure
-              out
-            </li>
-            <li>
-              <i class="fas fa-angle-right"></i> Don't have a clue? Skip to the
-              next one
-            </li>
+            <li>Guess what movie is hidden behind the emojis</li>
+            <li>You have 30 seconds to figure out</li>
+            <li>Don't have a clue? Skip to the next one</li>
           </ul>
-          <button id="start" class="btn btn-start">Let's go!</button>
+          <button id="btn-start" class="btn">Let's go!</button>
         </div>
       </section>
     </main>
@@ -60,11 +51,17 @@
       </div>
       <div class="game-container" class="is-flex">
         <div class="emoji-container">
-          <div class="emoji-box"></div>
+          <div class="emoji-box">
+            <ul class="emoji-list is-flex">
+              <li class="emoji">🏄‍♂️</li>
+              <li class="emoji">🔫</li>
+              <li class="emoji">💰</li>
+            </ul>
+          </div>
         </div>
         <input type="text" id="user-input" />
       </div>
-      <button id="skip" class="btn skip-btn"></button>
+      <button id="skip" class="btn skip-btn">Skip</button>
       <div id="result-container"></div>
     </section>
     <!-- about section, when about button is clicked -->

@@ -1,0 +1,23 @@
+const answers = [
+  "Point Break" : {"🏄‍♂️", "🔫", "💰"},
+  "Titanic" : {"","",""},
+  "Inception": {"","",""},
+  'Fight Club': {"","",""},
+  "Jumanji": {"","",""},
+  "Life of Pi": {"","",""},
+  "Forrest Gump": {"","",""},
+  "Harry Potter": {"","",""},
+  "E.T.": {"","",""},
+  "Matrix": {"","",""},
+  "The Shining": {"","",""},
+  "Mad Max": {"","",""},
+  "Brokeback Mountain": {"","",""},
+  "Finding Nemo": {"","",""},
+  "Wolf of Wall Street": {"","",""},
+  "Lord of the Rings": {"","",""},
+  "The Sixth Sense": {"","",""},
+  "Blood Diamond": {"","",""},
+  "King's Speech": {"","",""},
+  "A Clockwork Orange": {"","",""},
+  "Kill Bill": {"","",""}
+]

@@ -1,5 +1,5 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&family=Kavivanar&display=swap');
 
 /* global reset */
 * {
@@ -8,16 +8,21 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  color: #0e2431;
 }
 
 /* general styling */
 body {
   font-family: 'Work Sans';
-  
+  background-color: #f6f6e9;
 }
 
 .is-flex {
   display: flex;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 /* header */
@@ -32,14 +37,15 @@ body {
   font-size: 4rem;
   font-weight: 300;
   text-align: center;
-  margin: 100px auto;
-  visibility: hidden;
+  margin: 100px auto 60px;
+}
+
+#home {
 }
 
 #main-container {
   justify-content: center;
   align-items: center;
-  visibility: hidden
 }
 
 .left {
@@ -61,21 +67,26 @@ body {
   margin-bottom: 35px;
 }
 
-.btn-start{
+.rules-list li::before {
+  content: '📋';
+  font-size: 1.5rem;
+  margin-right: 25px;
+}
+
+#btn-start {
   font-weight: 600;
   font-size: 1.4rem;
   height: 70px;
   width: 300px;
-  margin : 0 auto;
+  margin: 0 auto;
   border-radius: 50px;
   text-transform: uppercase;
 }
 
-.btn-start:active{
-  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
-  transform:translateY(-1px);
+#btn-start:active {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
-
 
 /* footer */
 .credits {
@@ -83,16 +94,17 @@ body {
 }
 
 /* in-game section */
-#in-game{
+#in-game {
   position: absolute;
   top: 120px;
   left: 0;
   width: 100%;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-#timer{
+#timer {
   width: 60%;
   height: 25px;
   margin: 25px auto;
@@ -100,24 +112,37 @@ body {
   justify-content: center;
 }
 
-.time-counter{
+.time-counter {
   height: 100%;
   width: 80%;
   background-color: lightyellow;
 }
-.game-container{
-  width: 50%;
+
+.game-container {
+  min-width: 300px;
+  max-width: 50%;
   flex-direction: column;
+  height: 100%;
+  margin: 100px auto;
 }
-#user-input{
+
+#user-input {
   font-size: 2em;
   height: 50px;
-  width: 75%;
-  margin: 50px auto;
+  width: 100%;
   text-align: center;
 }
 
+.emoji-list {
+  justify-content: space-evenly;
+  margin-bottom: 75px;
+}
+
+.emoji {
+  font-size: 3em;
+}
+
 /* about section */
-#about{
+#about {
   visibility: hidden;
 }
