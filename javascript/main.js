@@ -11,8 +11,9 @@ function setGame() {
   home.classList.add('hide');
   about.classList.add('hide');
   inGame.classList.remove('hide');
-  displayQuiz();
   console.log(home, inGame);
+  displayQuiz();
+  setTimer();
 }
 
 function setHome() {
@@ -27,7 +28,11 @@ function setAbout() {
 }
 
 function displayQuiz() {
-  //
+  pickRandomQuiz()
+}
+
+function pickRandomQuiz() {
+  const quiz = [...answers]
 }
 
 function skipQuiz() {
@@ -47,4 +52,4 @@ btnStart.onclick = setGame();
 btnHome.onclick = setHome();
 btnAbout.onclick = setAbout();
 
-window.addEventListener('load', setHome());
+// window.addEventListener('load', setHome());
