@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <!-- css & bootstrap -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- <link rel="stylesheet" href="./styles/bootstrap.min.css" /> -->
+    <!-- js files -->
+    <script type="module" src="./javascript/main.js"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/c21b838598.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Emoji Quiz | Guess It!</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav is-flex">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
+    </header>
+    <!-- Main section - home page -->
+    <main id="home">
+      <h1 class="main-title">Emoji Quiz</h1>
+      <section id="main-container" class="is-flex">
+        <div class="left is-flex"></div>
+        <div class="right is-flex">
+          <ul class="rules-list">
+            <li>
+              <i class="fas fa-angle-right"></i> Guess what movie is hidden
+              behind the emojis
+            </li>
+            <li>
+              <i class="fas fa-angle-right"></i> You have 30 seconds to figure
+              out
+            </li>
+            <li>
+              <i class="fas fa-angle-right"></i> Don't have a clue? Skip to the
+              next one
+            </li>
+          </ul>
+          <button id="start" class="btn btn-start">Let's go!</button>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <!-- <footer id="main-footer">
+      <div class="credits">
+        <p>Designed and coded by @william</p>
+      </div>
+    </footer> -->
+    <!-- In-game section replace home section when start btn is clicked -->
+    <section id="in-game" class="is-flex">
+      <div id="timer" class="is-flex">
+        <div class="time-counter"></div>
+      </div>
+      <div class="game-container" class="is-flex">
+        <div class="emoji-container">
+          <div class="emoji-box"></div>
+        </div>
+        <input type="text" id="user-input" />
+      </div>
+      <button id="skip" class="btn skip-btn"></button>
+      <div id="result-container"></div>
+    </section>
+    <!-- about section, when about button is clicked -->
+    <section id="about">
+      <div class="about-container">
+        <h2 class="about-title">About this game</h2>
+        <p class="about-text">
+          This game has been designed and coded from scratch in the frame of the
+          first project of the Ironhack Fullstack Web Developer bootcamp.
+        </p>
+        <p class="contact-text">
+          Any suggestions? Noticed some bugs? I'd love to hear from you!
+        </p>
+        <div class="socials">
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fas fa-envelope"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
