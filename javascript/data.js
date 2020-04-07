@@ -1,36 +1,128 @@
-const answers = [
-  "Point Break" : {"🏄‍♂️", "🔫", "💰"},
-  "Titanic" : {"🧊","🛥️","❤️"},
-  "Inception": {"","🔫",""},
-  'Fight Club': {"🤐","👊","🧼"},
-  "Jumanji": {"","",""},
-  "Life of Pi": {"🚣‍♂️","🐯","👳🏾"},
-  "Forrest Gump": {"🏃‍♂️","🍤",""},
-  "Harry Potter": {"","",""},
-  "E.T.": {"👽","📞","🚲"},
-  "Matrix": {"💊","🕴️","🔫", "🖥️"},
-  "The Shining": {"👯","🪓","🏨"},
-  "Mad Max": {"🏎️","🚗","🚰", "🎸"},
-  "Brokeback Mountain": {"👨","👨","🏕️"},
-  "Finding Nemo": {"🔎","🐠"},
-  "Wolf of Wall Street": {"🐺","🏦","💸"},
-  "Lord of the Rings": {"👦🏻","💍","🌋"},
-  "Blood Diamond": {"🩸","💎","🔫"},
-  "King's Speech": {"👑","💬"},
-  "A Clockwork Orange": {"🕰️","🟠", "⚙️"},
-  "Kill Bill": {"🎥","👰","🔪"},
-  "Chicken Run": {"🐓","🐔","🏃‍♂️"},
-  "Planet of the Apes": {"🦍","🌎","🦧"},
-  "Alice in Wonderland": {"🐇","🕳️","♠️", "♣️"},
-  "Up": {"🏠","🎈","👴🏻","👶"},
-  "Sherlock": {"🕵️","🔫","🔎"},
-  "Raging Bull": {"😡","🐂"},
-  "Blade Runner": {"🗡️","🏃‍♂️"},
-  "Slumdog Millionaire": {"👳🏾","📺","💵"},
-  "Kung Fu Panda": {"👊","🐼"},
-  "The Silence of the Lambs": {"🔕","🐑","🐑"},
-  " Whiplash": {"🥁","🤕"},
-  " Memento": {"📆","⏪","📆"},
-  " Jaws": {"🚣‍♂️","🦈","💀"},
-  
-]
+const movies = [
+  {
+    title: 'Point Break',
+    emoji: ['🏄‍♂️', '🔫', '💰'],
+  },
+  {
+    title: 'Titanic',
+    emoji: ['🧊', '🛥️', '❤️'],
+  },
+  {
+    title: 'Fight Club',
+    emoji: ['🤐', '👊', '🧼'],
+  },
+  {
+    title: 'Life of Pi',
+    emoji: ['🚣‍♂️', '🐯', '👳🏾'],
+  },
+  {
+    title: 'Forrest Gump',
+    emoji: ['🎥', '🏃‍♂️', '🍤', '🌲'],
+  },
+  {
+    title: 'Harry Potter',
+    emoji: ['⚡', '👦🏻', '⚗️', '📜'],
+  },
+  {
+    title: 'E.T.',
+    emoji: ['👽', '📞', '🚲'],
+  },
+  {
+    title: 'Matrix',
+    emoji: ['💊', '🕴️', '🔫', '🖥️'],
+  },
+  {
+    title: 'The Shining',
+    emoji: ['👯', '🪓', '🏨'],
+  },
+  {
+    title: 'Mad Max',
+    emoji: ['🏎️', '🚗', '🚰', '🎸'],
+  },
+  {
+    title: 'Brokeback Mountain',
+    emoji: ['👨', '👨', '🏕️'],
+  },
+  {
+    title: 'Finding Nemo',
+    emoji: ['🔎', '🐠'],
+  },
+  {
+    title: 'Wolf of Wall Street',
+    emoji: ['🐺', '🏦', '💸'],
+  },
+  {
+    title: 'Lord of the Rings',
+    emoji: ['👦🏻', '💍', '🌋'],
+  },
+  {
+    title: 'Blood Diamond',
+    emoji: ['🩸', '💎', '🔫'],
+  },
+  {
+    title: "King's Speech",
+    emoji: ['👑', '💬'],
+  },
+  {
+    title: 'A Clockwork Orange',
+    emoji: ['🕰️', '🟠', '⚙️'],
+  },
+  {
+    title: 'Kill Bill',
+    emoji: ['🎥', '👰', '🔪'],
+  },
+  {
+    title: 'Chicken Run',
+    emoji: ['🐓', '🐔', '🏃‍♂️'],
+  },
+  {
+    title: 'Planet of the Apes',
+    emoji: ['🦍', '🌎', '🦧'],
+  },
+  {
+    title: 'Alice in Wonderland',
+    emoji: ['🐇', '🕳️', '👧', '♠️', '♣️'],
+  },
+  {
+    title: 'Up',
+    emoji: ['🏠', '🎈', '👴🏻', '👶'],
+  },
+  {
+    title: 'Sherlock',
+    emoji: ['🕵️', '🔫', '🔎'],
+  },
+  {
+    title: 'Raging Bull',
+    emoji: ['😡', '🐂'],
+  },
+  {
+    title: 'Blade Runner',
+    emoji: ['🗡️', '🏃‍♂️'],
+  },
+  {
+    title: 'Slumdog Millionaire',
+    emoji: ['👳🏾', '📺', '💵'],
+  },
+  {
+    title: 'Kung Fu Panda',
+    emoji: ['👊', '🐼', '🥋'],
+  },
+  {
+    title: 'The Silence of the Lambs',
+    emoji: ['🔕', '🐑', '🐑'],
+  },
+  {
+    title: 'Whiplash',
+    emoji: ['🥁', '🤕'],
+  },
+  {
+    title: 'Memento',
+    emoji: ['📆', '⏪', '📆'],
+  },
+  {
+    title: 'Jaws',
+    emoji: ['🚣‍♂️', '🦈', '💀'],
+  },
+];
+
+export { movies };

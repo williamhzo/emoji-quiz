@@ -8,13 +8,18 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  color: #0e2431;
+  color: var(--font-color);
 }
 
 /* general styling */
+:root {
+  --bg-color: #f7f5e6;
+  --font-color: #333a56;
+}
+
 body {
   font-family: 'Work Sans';
-  background-color: #f6f6e9;
+  background-color: var(--bg-color);
 }
 
 .is-flex {
@@ -37,7 +42,7 @@ body {
   font-size: 4rem;
   font-weight: 300;
   text-align: center;
-  margin: 100px auto 60px;
+  margin: 50px auto;
 }
 
 #home {
@@ -108,14 +113,13 @@ body {
   width: 60%;
   height: 25px;
   margin: 25px auto;
-  border: 1px solid lightgray;
   justify-content: center;
 }
 
 .time-counter {
   height: 100%;
-  width: 80%;
-  background-color: lightyellow;
+  width: 100%;
+  background-color: var(--font-color);
 }
 
 .game-container {
@@ -131,6 +135,12 @@ body {
   height: 50px;
   width: 100%;
   text-align: center;
+}
+
+.fa-keyboard {
+  margin-left: 25px;
+  font-size: 3em;
+  color: var(--font-color);
 }
 
 .emoji-list {

@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Emoji Quiz | Guess It!</title>
+    <title>Emoji Quiz | Guess the movie!</title>
   </head>
   <body>
     <header>
@@ -24,7 +24,7 @@
       </div>
     </header>
     <!-- Main section - home page -->
-    <main id="home" class="hide">
+    <main id="home" class="">
       <h1 class="main-title">Emoji Quiz</h1>
       <section id="main-container" class="is-flex">
         <div class="left is-flex"></div>
@@ -38,32 +38,39 @@
         </div>
       </section>
     </main>
+    <!-- // Main section - home page -->
     <!-- footer -->
     <!-- <footer id="main-footer">
       <div class="credits">
         <p>Designed and coded by @william</p>
       </div>
     </footer> -->
+    <!-- // footer -->
     <!-- In-game section replace home section when start btn is clicked -->
     <section id="in-game" class="is-flex hide">
       <div id="timer" class="is-flex">
         <div class="time-counter"></div>
       </div>
       <div class="game-container" class="is-flex">
-        <div class="emoji-container">
-          <div class="emoji-box">
-            <ul class="emoji-list is-flex">
-              <li class="emoji">🏄‍♂️</li>
-              <li class="emoji">🔫</li>
-              <li class="emoji">💰</li>
-            </ul>
-          </div>
+        <div class="emoji-box">
+          <ul class="emoji-list is-flex">
+            <!-- Replaced by real values in DOM 
+            <li class="emoji">🏄‍♂️</li>
+            <li class="emoji">🔫</li>
+            <li class="emoji">💰</li> -->
+          </ul>
         </div>
-        <input type="text" id="user-input" />
+        <div class="is-flex">
+          <input type="text" id="user-input" placeholder="Answer here" />
+          <i class="far fa-keyboard"></i>
+        </div>
       </div>
-      <button id="skip" class="btn skip-btn">Skip</button>
+      <aside id="score">
+      </aside>
+      <button id="btn-skip" class="btn">I don't have a clue</button>
       <div id="result-container"></div>
     </section>
+    <!-- // In-game section when start btn is clicked -->
     <!-- about section, when about button is clicked -->
     <section id="about" class="hide">
       <div class="about-container">
@@ -83,5 +90,6 @@
         </div>
       </div>
     </section>
+    <!-- // about section, when about button is clicked -->
   </body>
 </html>

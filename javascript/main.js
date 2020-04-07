@@ -1,55 +1,134 @@
-//variable declaration
-const home = document.getElementById('home');
-const inGame = document.getElementById('in-game');
-const about = document.getElementById('about');
+// importing data
+import { movies } from './data.js';
+
+// sections
+const homeSection = document.getElementById('home');
+const gameSection = document.getElementById('in-game');
+const aboutSection = document.getElementById('about');
+
+// in-game
+const emojiList = document.querySelector('.emoji-list');
+const totalScore = document.getElementById('score');
+// buttons
 const btnStart = document.getElementById('btn-start');
 const btnHome = document.getElementById('btn-home');
 const btnAbout = document.getElementById('btn-about');
+const btnSkip = document.getElementById('btn-skip');
 
-//functions & event handlers
-function setGame() {
-  home.classList.add('hide');
-  about.classList.add('hide');
-  inGame.classList.remove('hide');
-  console.log(home, inGame);
+// user input
+const input = document.getElementById('user-input');
+let currentEmojis,
+  currentTitle,
+  randomIndex,
+  currentScore,
+  currentFailed,
+  quizLength;
+let quizArray = [];
+let intervalId = 0;
+
+// functions
+
+const startGame = () => {
+  // initializes the game
+  currentScore = 0;
+  currentFailed = 0;
+  quizLength = movies.length;
+  updateScore();
+  quizArray = JSON.parse(JSON.stringify(movies));
+  setGameSection();
   displayQuiz();
+};
+
+const displayQuiz = () => {
+  // Takes a random movie from database and displays it in DOM
+  input.value = '';
+  randomIndex = Math.floor(Math.random() * quizArray.length);
+  currentEmojis = quizArray[randomIndex].emoji;
+  currentTitle = quizArray[randomIndex].title;
+  emojiList.innerHTML = '';
+  currentEmojis.forEach((e) => {
+    emojiList.innerHTML += `<li class="emoji">${e}</li>`;
+  });
+  // quizArray = quizArray.splice(quizArray[randomIndex], 1);
+  console.log(currentTitle);
   setTimer();
-}
+  quizArray.splice(randomIndex, 1);
+  if (quizArray.length === 0) {
+    // make a message 'pop' ==> 'That's all folks!'
+  }
+};
 
-function setHome() {
-  inGame.classList.add('hide');
-  about.classList.add('hide');
-  home.classList.remove('hide');
-  console.log('hola');
-}
+const updateScore = () => {
+  totalScore.innerHTML = `<li class='success'> Right: ${currentScore}</li>
+  <li class='fail'>Wrong: ${currentFailed}</li>
+  <li class='total'>Out of: ${quizLength}</li>`;
+};
 
-function setAbout() {
-  //
-}
+const skipQuiz = () => {
+  displayQuiz();
+  currentFailed++;
+  updateScore();
+};
 
-function displayQuiz() {
-  pickRandomQuiz()
-}
+const checkInput = () => {
+  if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
+    // remove 'The' and 'A' from input to avoid silly mistakes
+    clearInterval(intervalId);
+    displayQuiz();
+    currentScore++;
+    updateScore();
+    // make a message 'pop' ==> 'Great!' and turn focus green
+  } else {
+    // make a message 'pop' ==> 'Nope' and turn focus red
+  }
+};
 
-function pickRandomQuiz() {
-  const quiz = [...answers]
-}
+const setTimer = () => {
+  const countFrom = 30;
+  let seconds = countFrom;
+  const timer = document.querySelector('.time-counter');
+  intervalId = setInterval(() => {
+    if (seconds < 0) {
+      clearInterval(intervalId);
+      displayQuiz();
+      currentFailed++;
+      updateScore();
+      return;
+    }
+    seconds--;
+    timer.style.width -= timer.style.width / countFrom;
+    console.log(seconds);
+  }, 1000);
+};
 
-function skipQuiz() {
-  //
-}
+// event handlers
+const setGameSection = () => {
+  homeSection.classList.add('hide');
+  aboutSection.classList.add('hide');
+  gameSection.classList.remove('hide');
+};
 
-function giveResult() {
-  //
-}
+const setHomeSection = () => {
+  gameSection.classList.add('hide');
+  aboutSection.classList.add('hide');
+  homeSection.classList.remove('hide');
+};
 
-function setTimer() {
-  //
-}
+const setAboutSection = () => {
+  gameSection.classList.add('hide');
+  homeSection.classList.add('hide');
+  aboutSection.classList.remove('hide');
+};
 
-//event listeners
-btnStart.onclick = setGame();
-btnHome.onclick = setHome();
-btnAbout.onclick = setAbout();
+const enterInput = (e) => {
+  if (e.key === 'Enter') {
+    checkInput();
+  }
+};
 
-// window.addEventListener('load', setHome());
+// event listeners
+btnStart.onclick = startGame;
+btnHome.onclick = setHomeSection;
+btnAbout.onclick = setAboutSection;
+btnSkip.onclick = skipQuiz;
+input.addEventListener('keypress', enterInput);
