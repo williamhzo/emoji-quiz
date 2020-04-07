@@ -9,11 +9,14 @@ const aboutSection = document.getElementById('about');
 // in-game
 const emojiList = document.querySelector('.emoji-list');
 const totalScore = document.getElementById('score');
+const timer = document.querySelector('.time-counter');
+
 // buttons
 const btnStart = document.getElementById('btn-start');
 const btnHome = document.getElementById('btn-home');
 const btnAbout = document.getElementById('btn-about');
 const btnSkip = document.getElementById('btn-skip');
+const btnKeyboard = document.querySelector('.fa-keyboard');
 
 // user input
 const input = document.getElementById('user-input');
@@ -30,32 +33,42 @@ let intervalId = 0;
 
 const startGame = () => {
   // initializes the game
-  currentScore = 0;
-  currentFailed = 0;
-  quizLength = movies.length;
-  updateScore();
-  quizArray = JSON.parse(JSON.stringify(movies));
+  initializeScore();
   setGameSection();
+  quizArray = JSON.parse(JSON.stringify(movies));
   displayQuiz();
 };
 
 const displayQuiz = () => {
-  // Takes a random movie from database and displays it in DOM
+  // Takes a random movie from database and displays the emojis it in DOM
+  initializeQuiz();
+  pickRandQuiz();
+  currentEmojis.forEach(
+    (e) => (emojiList.innerHTML += `<li class="emoji">${e}</li>`)
+  );
+  setTimer();
+  quizArray.splice(randomIndex, 1);
+  if (!quizArray.length) {
+    // make a message 'pop' ==> 'That's all folks!'
+  }
+};
+
+const initializeQuiz = () => {
   input.value = '';
+  emojiList.innerHTML = '';
+};
+
+const pickRandQuiz = () => {
   randomIndex = Math.floor(Math.random() * quizArray.length);
   currentEmojis = quizArray[randomIndex].emoji;
   currentTitle = quizArray[randomIndex].title;
-  emojiList.innerHTML = '';
-  currentEmojis.forEach((e) => {
-    emojiList.innerHTML += `<li class="emoji">${e}</li>`;
-  });
-  // quizArray = quizArray.splice(quizArray[randomIndex], 1);
-  console.log(currentTitle);
-  setTimer();
-  quizArray.splice(randomIndex, 1);
-  if (quizArray.length === 0) {
-    // make a message 'pop' ==> 'That's all folks!'
-  }
+};
+
+const initializeScore = () => {
+  currentScore = 0;
+  currentFailed = 0;
+  quizLength = movies.length;
+  updateScore();
 };
 
 const updateScore = () => {
@@ -65,9 +78,9 @@ const updateScore = () => {
 };
 
 const skipQuiz = () => {
-  displayQuiz();
   currentFailed++;
   updateScore();
+  displayQuiz();
 };
 
 const checkInput = () => {
@@ -84,21 +97,26 @@ const checkInput = () => {
 };
 
 const setTimer = () => {
-  const countFrom = 30;
-  let seconds = countFrom;
-  const timer = document.querySelector('.time-counter');
+  clearInterval(intervalId);
+  const countFrom = 333;
+  let timeCount = countFrom;
+  let timerWidth = 100;
   intervalId = setInterval(() => {
-    if (seconds < 0) {
-      clearInterval(intervalId);
+    if (timeCount <= 0) {
+      stopTimer();
       displayQuiz();
       currentFailed++;
       updateScore();
       return;
     }
-    seconds--;
-    timer.style.width -= timer.style.width / countFrom;
-    console.log(seconds);
-  }, 1000);
+    timeCount--;
+    timer.style.width = 'timerWidth' - '5px';
+    console.log(timeCount);
+  }, 60);
+};
+
+const stopTimer = () => {
+  clearInterval(intervalId);
 };
 
 // event handlers
@@ -131,4 +149,5 @@ btnStart.onclick = startGame;
 btnHome.onclick = setHomeSection;
 btnAbout.onclick = setAboutSection;
 btnSkip.onclick = skipQuiz;
+btnKeyboard.onclick = checkInput;
 input.addEventListener('keypress', enterInput);

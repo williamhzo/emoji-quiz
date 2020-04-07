@@ -32,7 +32,7 @@ const movies = [
     emoji: ['💊', '🕴️', '🔫', '🖥️'],
   },
   {
-    title: 'The Shining',
+    title: 'Shining',
     emoji: ['👯', '🪓', '🏨'],
   },
   {
@@ -64,7 +64,7 @@ const movies = [
     emoji: ['👑', '💬'],
   },
   {
-    title: 'A Clockwork Orange',
+    title: 'Clockwork Orange',
     emoji: ['🕰️', '🟠', '⚙️'],
   },
   {
@@ -108,7 +108,7 @@ const movies = [
     emoji: ['👊', '🐼', '🥋'],
   },
   {
-    title: 'The Silence of the Lambs',
+    title: 'Silence of the Lambs',
     emoji: ['🔕', '🐑', '🐑'],
   },
   {
