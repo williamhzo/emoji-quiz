@@ -25,9 +25,11 @@ let currentEmojis, // set of emojis for ongoing question
   randomIndex, // random number to select question
   currentScore, // user score during game
   currentFailed, // failed and/or skipped questions
-  quizLength; // total number of questions
+  quizLength, // total number of questions
+  answer; // boolean from user input: if it's correct or not
 let quizArray = []; // questions array
 let intervalId = 0; // id to clear the timer countdown
+let stopId = 0;
 
 // functions
 
@@ -48,14 +50,15 @@ const displayQuiz = () => {
   // Takes a random movie from database and displays the emojis it in DOM
   initializeQuiz();
   pickRandQuiz();
+  changeColor();
   currentEmojis.forEach(
     (e) => (emojiList.innerHTML += `<li class="emoji">${e}</li>`)
   );
   setTimer();
+  // startTimer();
+  console.log(currentTitle);
   quizArray.splice(randomIndex, 1);
-  if (!quizArray.length) {
-    // make a message 'pop' ==> 'That's all folks!'
-  }
+  // if (!quizArray.length)  make a message 'pop' ==> 'That's all folks!'
 };
 
 // clear the game board: user input & emojis
@@ -99,6 +102,7 @@ const skipQuiz = () => {
 const checkInput = () => {
   if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
     // remove 'The' and 'A' from input to avoid silly mistakes
+    // displayResult(true)
     stopTimer();
     displayQuiz();
     currentScore++;
@@ -106,32 +110,21 @@ const checkInput = () => {
     // make a message 'pop' ==> 'Great!' and turn focus green
   } else {
     // make a message 'pop' ==> 'Nope' and turn focus red
+    // displayResult(false)
   }
 };
 
+const displayResult = (answer) => {
+  // answer
+  // ? // right answer!
+  // : // wrong answer!
+}
+
 // stop previous timer if ongoing & set new one
 // if time is out: stopTimer, displayQuiz, updateScore
-// const setTimer = () => {
-//   clearInterval(intervalId);
-//   const countFrom = 200;
-//   let timeCount = countFrom;
-//   intervalId = setInterval(() => {
-//     if (timeCount <= 0) {
-//       stopTimer();
-//       displayQuiz();
-//       currentFailed++;
-//       updateScore();
-//       return;
-//     }
-//     timeCount--;
-//     timer.style.width = Math.floor((100 * timeCount) / countFrom) + '%';
-//     console.log(timeCount);
-//   }, 100);
-// };
-
 const setTimer = () => {
   clearInterval(intervalId);
-  const countFrom = 200;
+  const countFrom = 2000;
   let timeCount = countFrom;
   intervalId = setInterval(() => {
     if (timeCount <= 0) {
@@ -143,8 +136,7 @@ const setTimer = () => {
     }
     timeCount--;
     timer.style.width = Math.floor((100 * timeCount) / countFrom) + '%';
-    console.log(timeCount);
-  }, 100);
+  }, 10);
 };
 
 // stop timer
@@ -152,23 +144,46 @@ const stopTimer = () => {
   clearInterval(intervalId);
 };
 
+// change bg color
+const changeColor = () => {
+  const colorArray = [
+    '#f2eaec',
+    '#F9DC5C',
+    '#FAF4D0',
+    '#7ED3B2',
+    '#eaceb4',
+    '#B0F4E6',
+    '#FFE1C6',
+    '#CEE27D',
+    '#f7f5e6',
+  ];
+  let randomColor = Math.floor(Math.random() * colorArray.length);
+  document.getElementById('body').style.backgroundColor =
+    colorArray[randomColor];
+};
+
 // event handlers
 const setGameSection = () => {
   homeSection.classList.add('hide');
   aboutSection.classList.add('hide');
   gameSection.classList.remove('hide');
+  changeColor();
 };
 
 const setHomeSection = () => {
   gameSection.classList.add('hide');
   aboutSection.classList.add('hide');
   homeSection.classList.remove('hide');
+  changeColor();
+  stopTimer();
 };
 
 const setAboutSection = () => {
   gameSection.classList.add('hide');
   homeSection.classList.add('hide');
   aboutSection.classList.remove('hide');
+  changeColor();
+  stopTimer();
 };
 
 const enterInput = (e) => {
@@ -184,4 +199,3 @@ btnAbout.onclick = setAboutSection;
 btnSkip.onclick = skipQuiz;
 btnKeyboard.onclick = checkInput;
 input.addEventListener('keypress', enterInput);
-window.requestAnimationFrame();

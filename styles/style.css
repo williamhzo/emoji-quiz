@@ -1,6 +1,21 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&family=Kavivanar&display=swap');
 
+
+
+/*
+bg color palettes
+#f2eaec;
+#F9DC5C;
+#FAF4D0;
+#7ED3B2;
+#eaceb4;
+#B0F4E6;
+#FFE1C6;
+#CEE27D;
+#f7f5e6;
+*/
+
 /* global reset */
 * {
   margin: 0;
@@ -20,6 +35,7 @@
 body {
   font-family: 'Work Sans';
   background-color: var(--bg-color);
+  transition: background  1s;
 }
 
 .is-flex {
@@ -56,13 +72,14 @@ body {
 .left {
   height: 350px;
   width: 250px;
-  border: solid 1px black;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+  padding-bottom: 100px;
 }
 
 .right {
-  padding-left: 50px;
+  padding-left: 30px;
   flex-direction: column;
 }
 
@@ -118,6 +135,7 @@ body {
   width: 98%;
   border-radius: 20px;
   background-color: var(--font-color);
+  transition: width 0.5s;
 }
 
 .game-container {
@@ -174,6 +192,7 @@ body {
 
 .about-text {
   font-size: 1.2rem;
+  line-height:2.3rem;
 }
 
 .fa-heart, .fa-js-square{

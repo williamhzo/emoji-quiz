@@ -16,7 +16,7 @@
 
     <title>Emoji Quiz | Guess the movie!</title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="nav is-flex">
         <button id="btn-home" class="btn">Home</button>
@@ -27,12 +27,12 @@
     <main id="home" class="">
       <h1 class="main-title">Emoji Quiz</h1>
       <section id="main-container" class="is-flex">
-        <div class="left is-flex"></div>
+        <div class="left is-flex">🤔<br />📽️</div>
         <div class="right is-flex">
           <ul class="rules-list">
-            <li>Guess what movie is hidden behind the emojis</li>
-            <li>You have 30 seconds to figure out</li>
+            <li>20 seconds to guess what movie is hidden behind the emojis</li>
             <li>Don't have a clue? Skip to the next one</li>
+            <li>Enjoy the ride!</li>
           </ul>
           <button id="btn-start" class="btn">Let's go!</button>
         </div>
@@ -57,6 +57,7 @@
             <!-- emojis will be displayed here -->
           </ul>
         </div>
+        <div class="result"></div>
         <div class="is-flex">
           <input type="text" id="user-input" placeholder="Answer here" />
           <i class="far fa-keyboard"></i>
