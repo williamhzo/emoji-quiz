@@ -10,13 +10,14 @@ const aboutSection = document.getElementById('about');
 const emojiList = document.querySelector('.emoji-list');
 const totalScore = document.getElementById('score');
 const timer = document.querySelector('.time-counter');
+const result = document.querySelector('.result');
 
 // buttons
 const btnStart = document.getElementById('btn-start');
 const btnHome = document.getElementById('btn-home');
 const btnAbout = document.getElementById('btn-about');
 const btnSkip = document.getElementById('btn-skip');
-const btnKeyboard = document.querySelector('.fa-keyboard');
+const btnValidate = document.querySelector('.validate');
 
 // user input
 const input = document.getElementById('user-input');
@@ -102,7 +103,7 @@ const skipQuiz = () => {
 const checkInput = () => {
   if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
     // remove 'The' and 'A' from input to avoid silly mistakes
-    // displayResult(true)
+    displayResult(true);
     stopTimer();
     displayQuiz();
     currentScore++;
@@ -110,15 +111,15 @@ const checkInput = () => {
     // make a message 'pop' ==> 'Great!' and turn focus green
   } else {
     // make a message 'pop' ==> 'Nope' and turn focus red
-    // displayResult(false)
+    displayResult(false);
   }
 };
 
 const displayResult = (answer) => {
-  // answer
-  // ? // right answer!
-  // : // wrong answer!
-}
+  answer
+    ? (result.innerHTML = `<h3 class='correct'>Correct!</h3>`)
+    : (result.innerHTML = `<h3 class='incorrect'>Nope</h3>`);
+};
 
 // stop previous timer if ongoing & set new one
 // if time is out: stopTimer, displayQuiz, updateScore
@@ -164,24 +165,24 @@ const changeColor = () => {
 
 // event handlers
 const setGameSection = () => {
+  gameSection.classList.remove('hide');
   homeSection.classList.add('hide');
   aboutSection.classList.add('hide');
-  gameSection.classList.remove('hide');
   changeColor();
 };
 
 const setHomeSection = () => {
+  homeSection.classList.remove('hide');
   gameSection.classList.add('hide');
   aboutSection.classList.add('hide');
-  homeSection.classList.remove('hide');
   changeColor();
   stopTimer();
 };
 
 const setAboutSection = () => {
+  aboutSection.classList.remove('hide');
   gameSection.classList.add('hide');
   homeSection.classList.add('hide');
-  aboutSection.classList.remove('hide');
   changeColor();
   stopTimer();
 };
@@ -193,9 +194,10 @@ const enterInput = (e) => {
 };
 
 // event listeners
-btnStart.onclick = startGame;
+window.onload = changeColor;
 btnHome.onclick = setHomeSection;
 btnAbout.onclick = setAboutSection;
+btnStart.onclick = startGame;
 btnSkip.onclick = skipQuiz;
-btnKeyboard.onclick = checkInput;
+btnValidate.onclick = checkInput;
 input.addEventListener('keypress', enterInput);

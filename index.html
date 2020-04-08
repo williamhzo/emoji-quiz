@@ -24,7 +24,7 @@
       </div>
     </header>
     <!-- Main section - home page -->
-    <main id="home" class="">
+    <main id="home">
       <h1 class="main-title">Emoji Quiz</h1>
       <section id="main-container" class="is-flex">
         <div class="left is-flex">🤔<br />📽️</div>
@@ -34,20 +34,14 @@
             <li>Don't have a clue? Skip to the next one</li>
             <li>Enjoy the ride!</li>
           </ul>
-          <button id="btn-start" class="btn">Let's go!</button>
+          <button id="btn-start" class="btn">Let's go! 🍿</button>
         </div>
       </section>
     </main>
     <!-- // Main section - home page -->
-    <!-- footer -->
-    <!-- <footer id="main-footer">
-      <div class="credits">
-        <p>Designed and coded by @william</p>
-      </div>
-    </footer> -->
-    <!-- // footer -->
     <!-- In-game section replace home section when start btn is clicked -->
     <section id="in-game" class="is-flex hide">
+      <div id="bg-img"></div>
       <div id="timer" class="is-flex">
         <div class="time-counter"></div>
       </div>
@@ -58,14 +52,19 @@
           </ul>
         </div>
         <div class="result"></div>
-        <div class="is-flex">
-          <input type="text" id="user-input" placeholder="Answer here" />
-          <i class="far fa-keyboard"></i>
+        <div class="is-flex input-ctn">
+          <!-- player input -->
+          <input autocomplete="off" type="text" name="answer" id="user-input" />
+          <label for="answer" class="label-answer">
+            <span class="content-answer">What's your guess?</span>
+          </label>
+          <span class="validate">🍿</span>
+          <!-- <i class="far fa-keyboard"></i> -->
+          <div id="result-container"></div>
         </div>
       </div>
       <aside id="score"></aside>
       <button id="btn-skip" class="btn">I don't have a clue</button>
-      <div id="result-container"></div>
     </section>
     <!-- // In-game section when start btn is clicked -->
     <!-- about section, when about button is clicked -->
