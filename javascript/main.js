@@ -99,7 +99,6 @@ const skipQuiz = () => {
 
 // when user inputs: compare input with the expected answer
 // if true: stopTimer, displayQuiz, updateScore
-// if false:
 const checkInput = () => {
   if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
     // remove 'The' and 'A' from input to avoid silly mistakes
@@ -108,17 +107,19 @@ const checkInput = () => {
     displayQuiz();
     currentScore++;
     updateScore();
-    // make a message 'pop' ==> 'Great!' and turn focus green
   } else {
-    // make a message 'pop' ==> 'Nope' and turn focus red
     displayResult(false);
   }
 };
 
 const displayResult = (answer) => {
   answer
-    ? (result.innerHTML = `<h3 class='correct'>Correct!</h3>`)
-    : (result.innerHTML = `<h3 class='incorrect'>Nope</h3>`);
+    ? (result.innerHTML = `<h3 class='result-text' style='color:green'>Correct!</h3>`)
+    : (result.innerHTML = `<h3 class='result-text'  style='color:red'>Nope</h3>`);
+
+  setTimeout(() => {
+    result.innerHTML = '';
+  }, 1500);
 };
 
 // stop previous timer if ongoing & set new one
@@ -135,8 +136,7 @@ const setTimer = () => {
       updateScore();
       return;
     }
-    timeCount--;
-    timer.style.width = Math.floor((100 * timeCount) / countFrom) + '%';
+    timer.style.width = Math.floor((100 * timeCount--) / countFrom) + '%';
   }, 10);
 };
 

@@ -54,13 +54,17 @@
         <div class="result"></div>
         <div class="is-flex input-ctn">
           <!-- player input -->
-          <input autocomplete="off" type="text" name="answer" id="user-input" />
+          <input
+            autocomplete="off"
+            type="text"
+            name="answer"
+            id="user-input"
+            required
+          />
           <label for="answer" class="label-answer">
             <span class="content-answer">What's your guess?</span>
           </label>
           <span class="validate">🍿</span>
-          <!-- <i class="far fa-keyboard"></i> -->
-          <div id="result-container"></div>
         </div>
       </div>
       <aside id="score"></aside>
