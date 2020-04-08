@@ -20,25 +20,30 @@ const btnKeyboard = document.querySelector('.fa-keyboard');
 
 // user input
 const input = document.getElementById('user-input');
-let currentEmojis,
-  currentTitle,
-  randomIndex,
-  currentScore,
-  currentFailed,
-  quizLength;
-let quizArray = [];
-let intervalId = 0;
+let currentEmojis, // set of emojis for ongoing question
+  currentTitle, // expected answer for ongoing question
+  randomIndex, // random number to select question
+  currentScore, // user score during game
+  currentFailed, // failed and/or skipped questions
+  quizLength; // total number of questions
+let quizArray = []; // questions array
+let intervalId = 0; // id to clear the timer countdown
 
 // functions
 
+// initialize the game: initializeScore, setGameSection,
+// create quiz array, displayQuiz
 const startGame = () => {
-  // initializes the game
   initializeScore();
   setGameSection();
   quizArray = JSON.parse(JSON.stringify(movies));
   displayQuiz();
 };
 
+// render new quiz question to the game board:
+// initializeQuiz, pickRandomQuiz, display set of emojis,
+// remove current question from current quiz array to prevent
+// redundant questions, check if remaining questions
 const displayQuiz = () => {
   // Takes a random movie from database and displays the emojis it in DOM
   initializeQuiz();
@@ -53,17 +58,20 @@ const displayQuiz = () => {
   }
 };
 
+// clear the game board: user input & emojis
 const initializeQuiz = () => {
   input.value = '';
   emojiList.innerHTML = '';
 };
 
+// generate random index & select corresponding question from array
 const pickRandQuiz = () => {
   randomIndex = Math.floor(Math.random() * quizArray.length);
   currentEmojis = quizArray[randomIndex].emoji;
   currentTitle = quizArray[randomIndex].title;
 };
 
+// clear the score board & define number of questions
 const initializeScore = () => {
   currentScore = 0;
   currentFailed = 0;
@@ -71,22 +79,27 @@ const initializeScore = () => {
   updateScore();
 };
 
+// input new score board into the DOM
 const updateScore = () => {
   totalScore.innerHTML = `<li class='success'> Right: ${currentScore}</li>
   <li class='fail'>Wrong: ${currentFailed}</li>
   <li class='total'>Out of: ${quizLength}</li>`;
 };
 
+// when user skips: updateScore and displayQuiz
 const skipQuiz = () => {
   currentFailed++;
   updateScore();
   displayQuiz();
 };
 
+// when user inputs: compare input with the expected answer
+// if true: stopTimer, displayQuiz, updateScore
+// if false:
 const checkInput = () => {
   if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
     // remove 'The' and 'A' from input to avoid silly mistakes
-    clearInterval(intervalId);
+    stopTimer();
     displayQuiz();
     currentScore++;
     updateScore();
@@ -96,11 +109,30 @@ const checkInput = () => {
   }
 };
 
+// stop previous timer if ongoing & set new one
+// if time is out: stopTimer, displayQuiz, updateScore
+// const setTimer = () => {
+//   clearInterval(intervalId);
+//   const countFrom = 200;
+//   let timeCount = countFrom;
+//   intervalId = setInterval(() => {
+//     if (timeCount <= 0) {
+//       stopTimer();
+//       displayQuiz();
+//       currentFailed++;
+//       updateScore();
+//       return;
+//     }
+//     timeCount--;
+//     timer.style.width = Math.floor((100 * timeCount) / countFrom) + '%';
+//     console.log(timeCount);
+//   }, 100);
+// };
+
 const setTimer = () => {
   clearInterval(intervalId);
-  const countFrom = 333;
+  const countFrom = 200;
   let timeCount = countFrom;
-  let timerWidth = 100;
   intervalId = setInterval(() => {
     if (timeCount <= 0) {
       stopTimer();
@@ -110,11 +142,12 @@ const setTimer = () => {
       return;
     }
     timeCount--;
-    timer.style.width = 'timerWidth' - '5px';
+    timer.style.width = Math.floor((100 * timeCount) / countFrom) + '%';
     console.log(timeCount);
-  }, 60);
+  }, 100);
 };
 
+// stop timer
 const stopTimer = () => {
   clearInterval(intervalId);
 };
@@ -151,3 +184,4 @@ btnAbout.onclick = setAboutSection;
 btnSkip.onclick = skipQuiz;
 btnKeyboard.onclick = checkInput;
 input.addEventListener('keypress', enterInput);
+window.requestAnimationFrame();

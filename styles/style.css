@@ -106,7 +106,7 @@ body {
 
 #timer {
   width: 60%;
-  height: 0.8em;
+  height: 0.8rem;
   border-radius: 20px;
   margin: 25px auto;
   justify-content: center;
@@ -129,7 +129,7 @@ body {
 }
 
 #user-input {
-  font-size: 2em;
+  font-size: 2rem;
   height: 50px;
   width: 100%;
   text-align: center;
@@ -137,7 +137,7 @@ body {
 
 .fa-keyboard {
   margin-left: 25px;
-  font-size: 3em;
+  font-size: 3rem;
   color: var(--font-color);
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .emoji {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 /* about section */
@@ -155,7 +155,7 @@ body {
 #about {
   position: absolute;
   top: 120px;
-  width: 70%;
+  width: 100%;
   margin: 50px auto;
   height: 300px;
   /* align-items: center; */
@@ -173,11 +173,11 @@ body {
 }
 
 .about-text {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .fa-heart, .fa-js-square{
-  font-size: 1.3em;
+  font-size: 1.3rem;
 }
 
 .contact-text {
@@ -185,8 +185,12 @@ body {
 }
 
 .socials{
-  font-size: 2em;
-  width: 300px;
+  font-size: 2rem;
+  width: 321px;
   align-items: center;
   justify-content: space-between;
+}
+
+.social-icons:hover{
+  color: #374061e7
 }
