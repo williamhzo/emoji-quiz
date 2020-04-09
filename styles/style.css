@@ -77,18 +77,14 @@ body {
 }
 
 #btn-start {
-  font-weight: 600;
-  font-size: 1.4rem;
-  height: 70px;
-  width: 300px;
+  width: 200px;
   margin: 0 auto;
-  border-radius: 50px;
-  text-transform: uppercase;
 }
 
-#btn-start:active {
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+#btn-home {
+}
+
+#btn-about {
 }
 
 /* in-game section */
@@ -161,8 +157,9 @@ body {
 
 #user-input:-moz-ui-invalid {
   box-shadow: none;
-  /* prevents FF to automatically add 
-    red border to invalid input */
+  outline: none;
+  border: none;
+  /* prevents FF to automatically add red border to invalid input */
 }
 
 .input-ctn {
@@ -184,8 +181,8 @@ body {
 
 #user-input:focus + .label-answer .content-answer,
 #user-input:valid + .label-answer .content-answer {
-  transform: translateY(-250%);
-  font-size: 0.7rem;
+  transform: translateY(-190%);
+  font-size: 0.8rem;
 }
 
 #user-input:focus + .label-answer::after,
@@ -194,9 +191,17 @@ body {
 }
 
 .content-answer {
+  font-size: 1.1rem;
   position: absolute;
-  top: 30px;
-  transition: all 0.3s ease;
+  top: 25px;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.ok {
+  position: absolute;
+  margin-left: 15px;
+  font-size: 1rem;
+  top: -5px;
 }
 
 .validate {
@@ -210,6 +215,28 @@ body {
 
 .validate:active {
   scale: 1;
+}
+
+#score {
+  width: 40%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px auto 0;
+}
+
+.success,
+.fail,
+.total {
+  padding: 0 10px;
+  font-weight: 300;
+  margin: 20px;
+}
+
+.success span,
+.fail span,
+.total span {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* animation in case player gets wrong anwser */

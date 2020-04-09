@@ -10,7 +10,7 @@ const aboutSection = document.getElementById('about');
 const emojiList = document.querySelector('.emoji-list');
 const totalScore = document.getElementById('score');
 const timer = document.querySelector('.time-counter');
-const result = document.querySelector('.result');
+const inputLabel = document.querySelector('.content-answer');
 
 // buttons
 const btnStart = document.getElementById('btn-start');
@@ -26,11 +26,9 @@ let currentEmojis, // set of emojis for ongoing question
   randomIndex, // random number to select question
   currentScore, // user score during game
   currentFailed, // failed and/or skipped questions
-  quizLength, // total number of questions
-  answer; // boolean from user input: if it's correct or not
+  quizLength; // total number of questions
 let quizArray = []; // questions array
 let intervalId = 0; // id to clear the timer countdown
-let stopId = 0;
 
 // functions
 
@@ -85,9 +83,9 @@ const initializeScore = () => {
 
 // input new score board into the DOM
 const updateScore = () => {
-  totalScore.innerHTML = `<li class='success'> Right: ${currentScore}</li>
-  <li class='fail'>Wrong: ${currentFailed}</li>
-  <li class='total'>Out of: ${quizLength}</li>`;
+  totalScore.innerHTML = `<li class='success'> Correct: <span>${currentScore}</span></li>
+  <li class='fail'>Failed: <span>${currentFailed}</span></li>
+  <li class='total'>Total: <span>${quizLength}</span></li>`;
 };
 
 // when user skips: updateScore and displayQuiz
@@ -106,6 +104,17 @@ const checkInput = () => {
     displayQuiz();
     currentScore++;
     updateScore();
+    setResult(true);
+  } else {
+    setResult(false);
+  }
+};
+
+// feedback on player's input: right or wrong
+const setResult = (answer) => {
+  if (answer) {
+    inputLabel.innerHTML += '<span class="ok">💯</span>';
+    setTimeout(() => document.querySelector('.ok').remove(), 1500);
   } else {
     input.style = 'animation: swing 0.8s ease;';
     setTimeout(() => input.style.removeProperty('animation'), 1000);
