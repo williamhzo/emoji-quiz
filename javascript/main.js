@@ -99,27 +99,17 @@ const skipQuiz = () => {
 
 // when user inputs: compare input with the expected answer
 // if true: stopTimer, displayQuiz, updateScore
+// if false: show the user
 const checkInput = () => {
   if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
-    // remove 'The' and 'A' from input to avoid silly mistakes
-    displayResult(true);
     stopTimer();
     displayQuiz();
     currentScore++;
     updateScore();
   } else {
-    displayResult(false);
+    input.style = 'animation: swing 0.8s ease;';
+    setTimeout(() => input.style.removeProperty('animation'), 1000);
   }
-};
-
-const displayResult = (answer) => {
-  answer
-    ? (result.innerHTML = `<h3 class='result-text' style='color:green'>Correct!</h3>`)
-    : (result.innerHTML = `<h3 class='result-text'  style='color:red'>Nope</h3>`);
-
-  setTimeout(() => {
-    result.innerHTML = '';
-  }, 1500);
 };
 
 // stop previous timer if ongoing & set new one
