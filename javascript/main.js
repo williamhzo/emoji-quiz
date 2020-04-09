@@ -133,7 +133,7 @@ const setResult = (answer) => {
 // if time is out: stopTimer, displayQuiz, updateScore
 const setTimer = () => {
   clearInterval(intervalId);
-  const countFrom = 2000;
+  const countFrom = 4000;
   let timeCount = countFrom;
   intervalId = setInterval(() => {
     if (timeCount <= 0) {
