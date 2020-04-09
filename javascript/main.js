@@ -44,9 +44,10 @@ const startGame = () => {
 // render new quiz question to the game board:
 // initializeQuiz, pickRandomQuiz, display set of emojis,
 // remove current question from current quiz array to prevent
-// redundant questions, check if remaining questions
+// redundant questions
 const displayQuiz = () => {
   // Takes a random movie from database and displays the emojis it in DOM
+
   initializeQuiz();
   pickRandQuiz();
   changeColor();
@@ -54,16 +55,22 @@ const displayQuiz = () => {
     (e) => (emojiList.innerHTML += `<li class="emoji">${e}</li>`)
   );
   setTimer();
-  // startTimer();
-  console.log(currentTitle);
   quizArray.splice(randomIndex, 1);
-  // if (!quizArray.length)  make a message 'pop' ==> 'That's all folks!'
 };
 
-// clear the game board: user input & emojis
+// clear the game board: user input & emojis,
+// check if remaining questions
 const initializeQuiz = () => {
   input.value = '';
   emojiList.innerHTML = '';
+  if (quizArray.length === 0) {
+    emojiList.innerHTML = `<li class="emoji">🙏</li>
+    <li class="emoji">🤓</li>
+    <li class="emoji">🤙</li>`;
+    inputLabel.innerHTML = "Thank's for playing!";
+    btnSkip.remove();
+    stopTimer();
+  }
 };
 
 // generate random index & select corresponding question from array
@@ -85,7 +92,9 @@ const initializeScore = () => {
 const updateScore = () => {
   totalScore.innerHTML = `<li class='success'> Correct: <span>${currentScore}</span></li>
   <li class='fail'>Failed: <span>${currentFailed}</span></li>
-  <li class='total'>Total: <span>${quizLength}</span></li>`;
+  <li class='total'>Remaining: <span>${
+    quizLength - currentScore - currentFailed
+  }</span></li>`;
 };
 
 // when user skips: updateScore and displayQuiz
@@ -146,17 +155,7 @@ const stopTimer = () => {
 
 // change bg color
 const changeColor = () => {
-  const colorArray = [
-    '#f2eaec',
-    '#F9DC5C',
-    '#FAF4D0',
-    '#7ED3B2',
-    '#eaceb4',
-    '#B0F4E6',
-    '#FFE1C6',
-    '#CEE27D',
-    '#f7f5e6',
-  ];
+  const colorArray = ['#f2eaec', '#FAF4D0', '#eaceb4', '#FFE1C6', '#f7f5e6'];
   let randomColor = Math.floor(Math.random() * colorArray.length);
   document.getElementById('body').style.backgroundColor =
     colorArray[randomColor];

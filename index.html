@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <!-- css & bootstrap -->
     <link rel="stylesheet" href="./styles/style.css" />
-    <!-- <link rel="stylesheet" href="./styles/bootstrap.min.css" /> -->
     <!-- js files -->
     <script type="module" src="./javascript/main.js"></script>
     <!-- font awesome -->
@@ -30,11 +29,11 @@
         <div class="left is-flex">🤔<br />📽️</div>
         <div class="right is-flex">
           <ul class="rules-list">
-            <li>20 seconds to guess what movie is hidden behind the emojis</li>
+            <li>20 seconds to guess what movie/TV show <br> is hidden behind the emojis</li>
             <li>Don't have a clue? Skip to the next one</li>
             <li>Enjoy the ride!</li>
           </ul>
-          <button id="btn-start" class="btn">Let's go! 👀</button>
+          <a id="btn-start" >Let's go!</a>
         </div>
       </section>
     </main>
@@ -67,7 +66,7 @@
           <span class="validate">🍿</span>
         </div>
       </div>
-      <button id="btn-skip" class="btn">I don't have a clue ⏭️</button>
+      <span id="btn-skip">I don't have a clue ⏭️</span>
       <aside id="score" class="is-flex"></aside>
     </section>
     <!-- // In-game section when start btn is clicked -->
@@ -76,10 +75,10 @@
       <div class="about-container is-flex">
         <h2 class="about-title">About this game</h2>
         <p class="about-text">
-          This game has been designed and coded with
-          <i class="fas fa-heart"></i>, pure CSS
+          This Single Page App has been designed and coded with
+          <i class="fas fa-heart"></i>,<br /> pure CSS
           <i class="fab fa-css3-alt"></i> & Vanilla
-          <i class="fab fa-js-square"></i>,<br />
+          <i class="fab fa-js-square"></i>
           in times of global confinement.
           <p class="about-text">Source code available
           <a

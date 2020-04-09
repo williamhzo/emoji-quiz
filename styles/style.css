@@ -4,6 +4,8 @@
 /* global reset */
 :root {
   --font-color: #333a56;
+  /* background color is defined randomly in 
+  changeColor() function of the main.js file */
 }
 
 * {
@@ -38,13 +40,13 @@ body {
   font-size: 1.1rem;
 }
 
-.nav-btn {
+.btn {
   cursor: pointer;
   position: relative;
   padding: 5px;
 }
 
-.nav-btn::after {
+.btn::after {
   content: '';
   position: absolute;
   left: 0;
@@ -57,21 +59,25 @@ body {
   transition: transform 0.3s ease-in;
 }
 
-.nav-btn:hover::after {
+.btn:hover::after {
   transform: scaleX(1);
 }
 
-.nav-btn span {
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn span {
   display: inline-block;
   position: relative;
   transition: 0.3s;
 }
 
-#btn-home span:after {
+#btn-home span::after {
   content: '🏠';
   position: absolute;
   opacity: 0;
-  top: 0;
+  top: -5px;
   right: -30px;
   transition: 0.5s;
 }
@@ -80,25 +86,29 @@ body {
   padding-right: 25px;
 }
 
-#btn-home:hover span:after {
+#btn-home:hover span::after {
   opacity: 1;
   right: 0;
 }
 
-#btn-about span:after {
+#btn-about span::after {
   content: '🤷';
   position: absolute;
   opacity: 0;
-  top: 0;
+  top: -5px;
   left: -30px;
   transition: 0.5s;
+}
+
+#btn-about::after {
+  transform-origin: right;
 }
 
 #btn-about:hover span {
   padding-left: 25px;
 }
 
-#btn-about:hover span:after {
+#btn-about:hover span::after {
   opacity: 1;
   left: 0;
 }
@@ -126,26 +136,58 @@ body {
 }
 
 .right {
-  padding-left: 30px;
+  padding-left: 50px;
+  height: 360px;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .rules-list li {
   line-height: 3rem;
   font-size: 1.5rem;
   margin-bottom: 35px;
-}
-
-.rules-list li::before {
-  content: '📋';
-  font-size: 1.5rem;
-  margin-right: 25px;
+  text-indent: 0px;
+  list-style-type: '📋  ';
 }
 
 #btn-start {
+  position: relative;
+  text-align: center;
+  line-height: 40px;
   cursor: pointer;
-  width: 200px;
-  margin: 0 auto;
+  width: 50%;
+  height: 40px;
+  left: -25px;
+  bottom: -20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: var(--font-color) 1px solid;
+  border-radius: 10px;
+  /* color: var(--font-color);
+  background-color: var(--bg-color); */
+}
+
+#btn-start::after {
+  content: '🚀 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 🎬';
+  opacity: 0;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  width: 0;
+  transition: width 0.75s ease-in, opacity 0.75s ease-in 0.1s;
+  /* transition-delay: opacity 1s; */
+  color: white;
+  background-color: var(--font-color);
+}
+
+#btn-start:hover::after {
+  width: 101%;
+  opacity: 1;
 }
 
 /* in-game section */
@@ -271,11 +313,11 @@ body {
 }
 
 .validate:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .validate:active {
-  scale: 1;
+  transform: scale(1);
 }
 
 #score {
@@ -298,6 +340,37 @@ body {
 .total span {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+#btn-skip {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background-color: inherit;
+  padding: 0 5px;
+}
+
+#btn-skip::after {
+  content: '😐';
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  background-color: #f7f5e6;
+  transform: translateX(0%);
+  transition: transform 0.7s ease;
+}
+
+#btn-skip:hover::after {
+  transform: translateX(110%);
+}
+
+#btn-skip:active {
+  transform: scale(0.97);
 }
 
 /* animation in case player gets wrong anwser */
@@ -344,7 +417,7 @@ body {
   line-height: 2.3rem;
 }
 
-.about-text a{
+.about-text a {
   font-weight: 600;
 }
 
@@ -369,12 +442,13 @@ body {
   height: 2px;
   background-color: var(--font-color);
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right;
   transition: transform 0.3s ease-in;
 }
 
 .sc-link:hover::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 .contact-text {
