@@ -47,7 +47,6 @@ const startGame = () => {
 // redundant questions
 const displayQuiz = () => {
   // Takes a random movie from database and displays the emojis it in DOM
-
   initializeQuiz();
   pickRandQuiz();
   changeColor();
@@ -67,7 +66,7 @@ const initializeQuiz = () => {
     emojiList.innerHTML = `<li class="emoji">🙏</li>
     <li class="emoji">🤓</li>
     <li class="emoji">🤙</li>`;
-    inputLabel.innerHTML = "Thank's for playing!";
+    inputLabel.innerHTML = "That's all Folks! Thanks for playing";
     btnSkip.remove();
     stopTimer();
   }

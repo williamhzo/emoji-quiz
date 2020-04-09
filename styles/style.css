@@ -239,11 +239,11 @@ body {
 @keyframes fade-in {
   from {
     opacity: 0;
-    scale: 0.2;
+    transform: scale(0.2);
   }
   to {
     opacity: 1;
-    scale: 1;
+    transform: scale(1);
   }
 }
 
@@ -360,7 +360,7 @@ body {
   width: 100%;
   height: 100%;
   transform-origin: left;
-  background-color: #f7f5e6;
+  background-color: #faf4d0;
   transform: translateX(0%);
   transition: transform 0.7s ease;
 }
@@ -421,12 +421,6 @@ body {
   font-weight: 600;
 }
 
-.fa-heart,
-.fa-js-square,
-.fa-css3-alt {
-  font-size: 1.3rem;
-}
-
 .sc-link {
   cursor: pointer;
   position: relative;
@@ -460,8 +454,33 @@ body {
   width: 321px;
   align-items: center;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
-.social-icons:hover {
+.fa-envelope:hover {
   color: #374061e7;
+  transform: scale(1.05);
+}
+
+.fa-linkedin-in:hover {
+  color: #0077b5;
+  transform: scale(1.1);
+}
+.fa-twitter:hover {
+  color: #1da1f2;
+  transform: scale(1.1);
+}
+.fa-github:hover {
+  color: #24292e;
+  transform: scale(1.1);
+}
+
+.fa-linkedin-in:active {
+  transform: scale(1);
+}
+.fa-twitter:active {
+  transform: scale(1);
+}
+.fa-github:active {
+  transform: scale(1);
 }
