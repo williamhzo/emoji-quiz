@@ -108,23 +108,19 @@ const skipQuiz = () => {
 // if true: stopTimer, displayQuiz, updateScore
 // if false: show the user
 const checkInput = () => {
-  let trimmedInput = input.value;
+  let trimmedInput = input.value.toUpperCase();
   let str;
   switch (trimmedInput.includes(str)) {
-    case str == 'the ':
-      trimmedInput = trimmedInput.replace('the ', '');
-    case str == 'The ':
-      trimmedInput = trimmedInput.replace('The ', '');
+    case str == 'THE ':
+      trimmedInput = trimmedInput.replace('THE ', '');
     case str == '.':
       trimmedInput = trimmedInput.replace('.', '');
     case str == '.':
       trimmedInput = trimmedInput.replace('.', '');
-    case str == 'a ':
-      trimmedInput = trimmedInput.replace('a ', '');
     case str == 'A ':
       trimmedInput = trimmedInput.replace('A ', '');
   }
-  if (trimmedInput.toUpperCase() === currentTitle.toUpperCase()) {
+  if (trimmedInput === currentTitle.toUpperCase()) {
     stopTimer();
     displayQuiz();
     currentScore++;
