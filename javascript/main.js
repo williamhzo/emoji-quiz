@@ -113,6 +113,8 @@ const checkInput = () => {
   switch (trimmedInput.includes(str)) {
     case str == 'THE ':
       trimmedInput = trimmedInput.replace('THE ', '');
+    case str == 'THE ':
+      trimmedInput = trimmedInput.replace('THE ', '');
     case str == '.':
       trimmedInput = trimmedInput.replace('.', '');
     case str == '.':

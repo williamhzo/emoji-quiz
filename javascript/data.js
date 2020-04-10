@@ -89,7 +89,7 @@ const movies = [
   },
   {
     title: 'Sherlock',
-    emoji: ['🕵️', '🔫', '🔎', '👣'],
+    emoji: ['🕵🏼‍♂️', '🔫', '🔎', '🎩', '👣'],
   },
   {
     title: 'Raging Bull',
