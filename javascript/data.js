@@ -24,7 +24,7 @@ const movies = [
     emoji: ['⚡', '👦🏻', '⚗️', '📜'],
   },
   {
-    title: 'E.T.',
+    title: 'ET',
     emoji: ['👽', '📞', '🚲'],
   },
   {
@@ -32,7 +32,7 @@ const movies = [
     emoji: ['💊', '🕴️', '🔫', '🖥️'],
   },
   {
-    title: 'The Shining',
+    title: 'Shining',
     emoji: ['👯', '🪓', '🏨'],
   },
   {
@@ -48,11 +48,11 @@ const movies = [
     emoji: ['🔎', '🐠'],
   },
   {
-    title: 'The Wolf of Wall Street',
+    title: 'Wolf of Wall Street',
     emoji: ['🐺', '🏦', '💸', '💊'],
   },
   {
-    title: 'The Lord of the Rings',
+    title: 'Lord of Rings',
     emoji: ['👦🏻', '💍', '🌋', '🧙‍♂️'],
   },
   {
@@ -64,7 +64,7 @@ const movies = [
     emoji: ['👑', '💬'],
   },
   {
-    title: 'A Clockwork Orange',
+    title: 'Clockwork Orange',
     emoji: ['🕰️', '🟠', '⚙️'],
   },
   {
@@ -76,7 +76,7 @@ const movies = [
     emoji: ['🐓', '🐔', '🏃‍♂️'],
   },
   {
-    title: 'Planet of the Apes',
+    title: 'Planet of Apes',
     emoji: ['🦍', '🌎', '🦧'],
   },
   {
@@ -108,7 +108,7 @@ const movies = [
     emoji: ['👊', '🐼', '🥋'],
   },
   {
-    title: 'The Silence of the Lambs',
+    title: 'Silence of the Lambs',
     emoji: ['🔕', '🐑', '🐑'],
   },
   {
@@ -128,7 +128,7 @@ const movies = [
     emoji: ['👨‍🔬', '👴', '🥽', '🔫', '💰'],
   },
   {
-    title: 'The Walking Dead',
+    title: 'Walking Dead',
     emoji: ['🧟‍♀️', '🚶', '🧟‍♂️', '🪓'],
   },
   {
@@ -136,7 +136,7 @@ const movies = [
     emoji: ['⚔️', '🐉', '🍑', '🐺', '❄️'],
   },
   {
-    title: 'Orange is the New Black',
+    title: 'Orange is New Black',
     emoji: ['🟠', '🆕', '⚫'],
   },
 ];

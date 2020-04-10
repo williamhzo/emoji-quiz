@@ -104,10 +104,27 @@ const skipQuiz = () => {
 };
 
 // when user inputs: compare input with the expected answer
+// remove 'the' and 'a' pronouns to avoid mistakes on input
 // if true: stopTimer, displayQuiz, updateScore
 // if false: show the user
 const checkInput = () => {
-  if (input.value.toUpperCase() === currentTitle.toUpperCase()) {
+  let trimmedInput = input.value;
+  let str;
+  switch (trimmedInput.includes(str)) {
+    case str == 'the ':
+      trimmedInput = trimmedInput.replace('the ', '');
+    case str == 'The ':
+      trimmedInput = trimmedInput.replace('The ', '');
+    case str == '.':
+      trimmedInput = trimmedInput.replace('.', '');
+    case str == '.':
+      trimmedInput = trimmedInput.replace('.', '');
+    case str == 'a ':
+      trimmedInput = trimmedInput.replace('a ', '');
+    case str == 'A ':
+      trimmedInput = trimmedInput.replace('A ', '');
+  }
+  if (trimmedInput.toUpperCase() === currentTitle.toUpperCase()) {
     stopTimer();
     displayQuiz();
     currentScore++;
