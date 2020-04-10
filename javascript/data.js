@@ -1,15 +1,15 @@
 const movies = [
   {
     title: 'Point Break',
-    emoji: ['🏄‍♂️', '🔫', '💰'],
+    emoji: ['🏄‍♂️', '🔫', '💰', '🎭'],
   },
   {
     title: 'Titanic',
-    emoji: ['🧊', '🛥️', '❤️'],
+    emoji: ['🧊', '🛥️', '💑'],
   },
   {
     title: 'Fight Club',
-    emoji: ['🤐', '👊', '🧼'],
+    emoji: ['🤐', '👊', '🤕', '🧼'],
   },
   {
     title: 'Life of Pi',
@@ -37,7 +37,7 @@ const movies = [
   },
   {
     title: 'Mad Max',
-    emoji: ['🏎️', '🚗', '🚰', '🎸'],
+    emoji: ['🏎️', '🚗', '🚰', '🎸', '🔫'],
   },
   {
     title: 'Brokeback Mountain',
@@ -49,11 +49,11 @@ const movies = [
   },
   {
     title: 'The Wolf of Wall Street',
-    emoji: ['🐺', '🏦', '💸'],
+    emoji: ['🐺', '🏦', '💸', '💊'],
   },
   {
     title: 'The Lord of the Rings',
-    emoji: ['👦🏻', '💍', '🌋'],
+    emoji: ['👦🏻', '💍', '🌋', '🧙‍♂️'],
   },
   {
     title: 'Blood Diamond',
@@ -69,7 +69,7 @@ const movies = [
   },
   {
     title: 'Kill Bill',
-    emoji: ['🎥', '👰', '🔪'],
+    emoji: ['🎥', '👰', '🔪', '👘'],
   },
   {
     title: 'Chicken Run',
@@ -89,7 +89,7 @@ const movies = [
   },
   {
     title: 'Sherlock',
-    emoji: ['🕵️', '🔫', '🔎'],
+    emoji: ['🕵️', '🔫', '🔎', '👣'],
   },
   {
     title: 'Raging Bull',
@@ -125,7 +125,7 @@ const movies = [
   },
   {
     title: 'Breaking Bad',
-    emoji: ['🧪', '👴', '🥽', '🔫', '💰'],
+    emoji: ['👨‍🔬', '👴', '🥽', '🔫', '💰'],
   },
   {
     title: 'The Walking Dead',
