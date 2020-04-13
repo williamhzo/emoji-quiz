@@ -108,16 +108,12 @@ const movies = [
     emoji: ['👊', '🐼', '🥋'],
   },
   {
-    title: 'Silence of the Lambs',
+    title: 'Silence of Lambs',
     emoji: ['🔕', '🐑', '🐑'],
   },
   {
     title: 'Whiplash',
     emoji: ['🥁', '🤕'],
-  },
-  {
-    title: 'Memento',
-    emoji: ['📆', '⏪', '📆'],
   },
   {
     title: 'Jaws',

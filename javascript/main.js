@@ -139,7 +139,7 @@ const setResult = (answer) => {
     inputLabel.innerHTML += '<span class="ok">💯</span>';
     setTimeout(() => document.querySelector('.ok').remove(), 1500);
   } else {
-    input.style = 'animation: swing 0.8s ease;';
+    input.style = 'animation: swing 1s ease;';
     setTimeout(() => input.style.removeProperty('animation'), 1000);
   }
 };
