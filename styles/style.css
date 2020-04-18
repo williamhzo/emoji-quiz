@@ -139,6 +139,7 @@ body {
 
 .right {
   padding-left: 50px;
+  padding-right: 30px;
   height: 360px;
   flex-direction: column;
   position: relative;
@@ -216,12 +217,14 @@ body {
     flex-direction: column;
   }
   .left {
-    padding: 0;
+    padding-bottom: 20px;
     width: 250px;
     height: 100px;
+    font-size: 4rem;
   }
   .right {
     align-items: center;
+    font-size: 1rem;
   }
   #btn-start {
     width: 80%;
@@ -370,7 +373,7 @@ body {
 .total {
   padding: 0 10px;
   font-weight: 300;
-  margin: 20px;
+  margin: 10px;
 }
 
 .success span,
@@ -411,6 +414,20 @@ body {
   transform: scale(0.97);
 }
 
+@media only screen and (max-width: 930px) {
+  .game-container {
+    margin: 25px auto;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .success,
+  .fail,
+  .total {
+    padding: 0;
+  }
+}
+
 /* animation in case player gets wrong anwser */
 @keyframes swing {
   15% {
@@ -444,15 +461,22 @@ body {
   justify-content: center;
 }
 
+.about-title {
+  margin-bottom: 15px;
+}
+
 .about-container {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  padding: 25px;
+  width: 600px;
 }
 
 .about-text {
   font-size: 1.2rem;
   line-height: 2.3rem;
+  margin-bottom: 15px;
 }
 
 .about-text a {
