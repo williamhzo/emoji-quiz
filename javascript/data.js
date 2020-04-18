@@ -135,6 +135,74 @@ const movies = [
     title: 'Orange is New Black',
     emoji: ['🟠', '🆕', '⚫'],
   },
+  {
+    title: 'Tiger King',
+    emoji: ['🐅', '👑'],
+  },
+  {
+    title: 'Lion King',
+    emoji: ['🦁', '👑'],
+  },
+  {
+    title: 'Stranger Things',
+    emoji: ['👽', '🚲', '1️⃣', '1️⃣'],
+  },
+  {
+    title: 'Seven',
+    emoji: ['📦', '👀', '❓', '7️⃣'],
+  },
+  {
+    title: 'City of God',
+    emoji: ['🌆', '🙏', '🇧🇷'],
+  },
+  {
+    title: 'Spider-man',
+    emoji: ['🕷️', '🙃', '🕸️'],
+  },
+  {
+    title: 'Batman',
+    emoji: ['🦇', '🤵', '💲', '🃏'],
+  },
+  {
+    title: 'Joker',
+    emoji: ['🃏'],
+  },
+  {
+    title: 'Catch me if you can',
+    emoji: ['👨‍✈️', '🤥', '✈️', '🏃‍♂️', '🕵️‍♂️'],
+  },
+  {
+    title: 'American Beauty',
+    emoji: ['🇺🇸', '🌹', '👩'],
+  },
+  {
+    title: 'Hateful Eight',
+    emoji: ['😡', '8️⃣', '🤠'],
+  },
+  {
+    title: 'Requiem for Dream',
+    emoji: ['👁️', '💉', '💊', '💤', '📺'],
+  },
+  {
+    title: 'Taxi Driver',
+    emoji: ['🚕', '🔫', ''],
+  },
+  {
+    title: 'Office',
+    emoji: ['🏢', '👨‍💼', '🖇️', '🤣', '🤦‍♂️'],
+  },
+  {
+    title: 'Jurassic Park',
+    emoji: ['🦕', '🦖', '👨‍🔬', '🚎', '🏃‍♂️'],
+  },
+  {
+    title: '12 years slave',
+    emoji: ['1️⃣', '2️⃣', '⛓️', '🏃🏿‍♂️', , '🎻'],
+  },
+  {
+    title: 'Rocky',
+    emoji: ['🥊', '💪', '🤼'],
+  },
 ];
 
 export { movies };
