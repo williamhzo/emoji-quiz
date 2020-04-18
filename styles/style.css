@@ -124,6 +124,7 @@ body {
 #main-container {
   justify-content: center;
   align-items: center;
+  margin: 0 25px;
 }
 
 .left {
@@ -132,7 +133,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 7rem;
-  padding-bottom: 100px;
+  text-align: center;
+  padding: 0 25px 100px;
 }
 
 .right {
@@ -187,6 +189,43 @@ body {
 #btn-start:hover::after {
   width: 101%;
   opacity: 1;
+}
+
+@media only screen and (max-width: 870px) {
+  .nav {
+    margin: 30px 50px;
+  }
+  .main-title {
+    margin: 25px auto;
+  }
+  .left {
+    font-size: 5rem;
+    width: 150px;
+  }
+  .rules-list li {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main-title {
+    font-size: 3.5rem;
+  }
+  #main-container {
+    flex-direction: column;
+  }
+  .left {
+    padding: 0;
+    width: 250px;
+    height: 100px;
+  }
+  .right {
+    align-items: center;
+  }
+  #btn-start {
+    width: 80%;
+  }
 }
 
 /* in-game section */
