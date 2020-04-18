@@ -453,7 +453,7 @@ body {
 
 #about {
   position: absolute;
-  top: 120px;
+  top: 100px;
   width: 100%;
   margin: 50px auto;
   height: 300px;
@@ -469,11 +469,11 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   padding: 25px;
-  width: 600px;
+  width: 750px;
 }
 
 .about-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 2.3rem;
   margin-bottom: 15px;
 }
@@ -508,6 +508,7 @@ body {
 
 .contact-text {
   font-weight: 300;
+  margin-bottom: 15px;
 }
 
 .socials {
@@ -544,4 +545,10 @@ body {
 }
 .fa-github:active {
   transform: scale(1);
+}
+
+@media only screen and (max-width: 870px) {
+  .about-text {
+    font-size: 1.2rem;
+  }
 }
